@@ -150,7 +150,15 @@ class Tapper:
 
     async def get_gra_hash(self, http_client: aiohttp.ClientSession,address):
         url = "https://wl-api.gra.fun/api/hash_addr"
-        payload = "{\"sign\":\"\",\"referrer\":\""+"0xc2FF3997A1Bc7dB020a8b95A6C0B228dEaaDE064"+"\",\"wallet_name\":\"OKX Wallet\",\"wallet_address\":\""+address+"\"}\n"
+        if settings.REF_ADDRESS:
+            ref=settings.REF_ADDRESS
+        else :
+            logger.error("write your ref_address ")
+            exit()
+        if "0x" not in ref:
+            logger.error("REF_ADDRESS must be ADDRESS , u can use b62.py to turn url to address")
+            exit()
+        payload = "{\"sign\":\"\",\"referrer\":\""+ref+"\",\"wallet_name\":\"OKX Wallet\",\"wallet_address\":\""+address+"\"}\n"
 
         response = await http_client.post(url, data=payload)
         if response.status not in (200, 201):
