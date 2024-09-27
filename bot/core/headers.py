@@ -1,0 +1,16 @@
+headers = {
+    'accept': '*/*',
+    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+    'cache-control': 'no-cache',
+    'content-type': 'text/plain;charset=UTF-8',
+    'origin': 'https://gra.fun',
+    'pragma': 'no-cache',
+    'priority': 'u=1, i',
+    'referer': 'https://gra.fun/',
+    'sec-ch-ua': '"Google Chrome";v="127", "Chromium";v="127", "Not.A/Brand";v="24"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    }
